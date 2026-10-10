@@ -1,0 +1,65 @@
+WC-BUG-002 — Cart May Allow Quantity Above Available Stock
+
+Module: Product Inventory / Shopping Cart
+
+Severity: Medium (provisional; subject to business rules)
+
+Priority:high
+
+Status: Suspected — verification required
+
+Environment: WholeCart browser-based test environment
+
+Product: Chef's Banana Chips
+
+
+Preconditions
+
+Buyer is logged in.
+
+Chef's Banana Chips is available in the product listing.
+
+The product listing displays stock availability of 1 piece.
+
+Steps to Reproduce
+
+Open the Chef's Banana Chips product listing.
+
+Record the displayed available stock and unit price.
+
+Add the product to the cart.
+
+Inspect the cart quantity and line-item amount.
+
+Check whether the quantity can be increased beyond the displayed stock.
+
+Observe whether the application displays a validation message or prevents an invalid quantity.
+
+Expected Result
+
+The cart should not allow a buyer to purchase more units than the available stock, unless the displayed stock has a different documented meaning.
+
+Invalid quantities should be rejected with a clear validation message.
+
+Inventory availability should be validated before order placement.
+
+Actual Result
+
+Observed:
+
+Product listing displays available stock of 1 piece.
+
+Unit price is ₹365.00 per piece.
+
+Requires verification:
+
+The cart amount appears to be ₹3,650.00, which would correspond to 10 pieces at ₹365.00 each.
+
+The actual cart quantity has not yet been confirmed.
+
+It has not been confirmed whether the application permits checkout with a quantity exceeding available stock.
+
+Business Impact
+
+If the cart permits purchases beyond actual inventory availability, buyers may place orders that cannot be fulfilled, leading to order cancellations, inventory inconsistencies, or customer dissatisfaction.
+

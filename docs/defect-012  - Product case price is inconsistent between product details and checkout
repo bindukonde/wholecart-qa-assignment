@@ -1,0 +1,19 @@
+ Product case price is inconsistent between product details and checkout
+
+**Module:** Catalogue / Cart / Checkout
+
+**Precondition:** The product is available and its configured case price is known.
+
+**Steps to Reproduce:**
+1. Open Classic Potato Chips (SKU-0463).
+2. Verify the displayed case price of ₹993.60.
+3. Add one case to the cart.
+4. Proceed to checkout.
+5. Compare the case price and line total across the three screens.
+
+**Expected Result:** The configured case price of ₹993.60 should remain consistent before tax across the product page, cart, and checkout.
+
+**Actual Result:** Record the actual price observed at each step. Report a defect only if a mismatch is reproduced.
+
+**Priority:** Based on the financial impact.
+

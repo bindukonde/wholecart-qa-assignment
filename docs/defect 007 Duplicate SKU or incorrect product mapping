@@ -1,0 +1,14 @@
+Duplicate SKU or incorrect product mapping
+  
+Severity: High if the wrong product is ordered.
+The supplied catalog contains 24 distinct SKU identifiers, but the application should also be checked for:
+- Duplicate SKUs in the database.
+- One SKU mapped to multiple product records.
+- A product name associated with the wrong SKU.
+- Incorrect category assignment.
+- Wrong tax or unit price returned by the API.
+- Product images inconsistent with product names.
+- Search results showing the wrong SKU.
+- Cart items merging different products because of a shared identifier.
+  
+For example, SKU-0469 must always resolve to Chef's Banana Chips, not Chef's Potato Chips. Verify this mapping on the listing page, product detail page, cart, API response, and order record.

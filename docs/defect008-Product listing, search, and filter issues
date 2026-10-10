@@ -1,0 +1,15 @@
+Product listing, search, and filter issues
+
+Severity: Medium.
+Check the 24 products through the search and listing features.
+- Search by complete product name.
+- Search by partial product name.
+- Search by exact SKU.
+- Search using different capitalization.
+- Search with leading/trailing spaces.
+- Filter by Grains, Spices, Oils, Dairy, Snacks, Cleaning, and Beverages.
+- Sort by price ascending and descending.
+- Verify that the correct category and tax details remain attached to each result.
+- Verify no duplicate products appear across pagination.
+- Verify empty searches and no-result messages.
+- Verify product counts agree with the filtered results.

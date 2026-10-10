@@ -1,0 +1,25 @@
+Cart allows checkout with quantities exceeding available stock
+
+**Module:** Shopping Cart / Inventory / Checkout
+
+**Severity:** High — subject to confirmation of current inventory
+
+**Preconditions:**
+- Product stock is available and accurately displayed.
+- Product can be added in Piece and Case units.
+
+**Steps to Reproduce:**
+1. Open Chef's Black Pepper.
+2. Add 99 cases to the cart.
+3. Add 99 pieces of the same SKU.
+4. Review the combined quantity and proceed to checkout.
+5. Repeat with Chef's Banana Chips if only one piece is available.
+
+**Expected Result:**
+The application should validate the combined requested quantity against available stock and prevent checkout if stock is insufficient. It should display a clear validation message.
+
+**Actual Result:**
+The cart displays 99 cases and 99 pieces of Black Pepper, as well as 60 pieces of Banana Chips, and permits navigation to checkout.
+
+
+**Note:** Reconfirm current stock and reproduce the behavior before classifying this as a confirmed defect.

@@ -1,0 +1,24 @@
+WC-BUG-001
+PFA of evidace 
+
+Title: Delivery slot options are displayed without selectable controls
+Module: Checkout
+Severity: Medium
+priority: High
+
+Precondition
+Buyer buyer1 is logged in and has a valid cart with net value ₹2,318.40.
+
+Steps to reproduce
+1. Open the Cart page.
+2. Click Proceed to checkout.
+3. Select a delivery date.
+4. Click Show slots.
+5. Inspect the delivery-slot options.
+Expected result
+Available delivery slots should have selectable radio buttons. Unavailable slots should be disabled with the reason displayed.
+Actual result
+The delivery-slot timings appear, but no selectable radio buttons are visible. The buyer cannot choose a delivery slot.
+Business impact
+The buyer may be unable to complete checkout and place an order.
+

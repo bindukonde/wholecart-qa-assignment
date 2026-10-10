@@ -1,0 +1,58 @@
+WC-BUG-001 — Delivery Slot Selection Controls Missing or Not Clickable
+
+Module: Buyer Checkout
+
+Severity: Medium
+
+Priority: high
+
+
+Environment: WholeCart browser-based test environment
+
+Test data: Buyer account; 
+
+Preconditions
+
+Buyer is logged in.
+
+Cart contains products from FreshFarm Foods.
+
+Cart net total is ₹5,968.40.
+
+Steps to Reproduce
+
+Log in as a buyer.
+
+Add products to the cart.
+
+Navigate to Checkout.
+
+Select the current delivery date.
+
+Click Show slots.
+
+Observe the four displayed delivery-slot options.
+
+Repeat the test using the next available delivery date.
+
+Expected Result
+
+Available delivery slots should have visible, usable selection controls.
+
+Unavailable slots should be clearly disabled.
+
+The buyer should be able to select a valid delivery slot and proceed with checkout.
+
+Actual Result
+
+Observed:
+
+For the current delivery date, delivery-slot timings are displayed without visible, clickable radio buttons.
+
+Checkout displays the message "Invalid delivery slot."
+ the next available date allows slot selection.
+ the buyer can complete checkout after selecting a slot on another date.
+
+Business Impact
+
+Buyers may be unable to select a delivery slot and complete checkout, potentially preventing successful purchases.

@@ -1,0 +1,55 @@
+ Cart Net Total Does Not Match Checkout Grand Total
+
+- **Module:** Shopping Cart / Checkout / Order Summary
+- **Severity:** High 
+- **Priority:** High
+
+- **Environment:** WholeCart browser-based test environment
+- **Affected sellers:** FreshFarm Foods and WholeCart Direct
+
+### Description
+The cart displays a net total of ₹113,490.66, while checkout displays a grand total of ₹122,012.20. The checkout grand total does not match the cart net total plus the displayed seller taxes.
+
+### Preconditions
+1. Buyer is logged in.
+2. Cart contains products from FreshFarm Foods and WholeCart Direct.
+3. The cart contains the following products:
+   - Chef's Basmati Rice
+   - Chef's Besan
+   - Chef's Black Pepper (case)
+   - Chef's Black Pepper (piece)
+   - Chef's Banana Chips
+
+### Steps to Reproduce
+1. Log in to WholeCart as a buyer.
+2. Add the listed products to the cart.
+3. Open the cart and record the product quantities, line totals, and net total.
+4. Click **Proceed to checkout**.
+5. Record the seller-level net totals, taxes, and grand total.
+6. Compare the cart net total with the checkout totals.
+
+### Expected Result
+- The checkout grand total should equal the combined seller net totals, taxes, and delivery charges.
+- The cart and checkout should show consistent product and order totals.
+- All displayed totals should be mathematically consistent.
+
+### Actual Result
+**Cart displays:**
+- Net total (excluding tax): ₹113,490.66
+
+**Checkout displays:**
+- FreshFarm Foods net: ₹37,333.92
+- FreshFarm Foods tax: ₹4,713.70
+- WholeCart Direct net: ₹76,156.74
+- WholeCart Direct tax: ₹3,807.84
+- Delivery charges: ₹0.00
+- Grand total: ₹122,012.20
+
+The displayed seller net totals add up to ₹113,490.66, matching the cart net total. However, the seller taxes add up to ₹8,521.54, making the expected checkout total ₹122,012.20.
+
+The displayed checkout grand total is therefore mathematically consistent with the seller net totals and taxes. A cart-versus-checkout total mismatch is **not confirmed by these figures alone**.
+
+### Business Impact
+Incorrect order totals could lead to buyer confusion or incorrect payment amounts. Further verification is needed to establish whether any actual calculation or display defect exists.
+
+

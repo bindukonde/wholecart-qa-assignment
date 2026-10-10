@@ -1,0 +1,29 @@
+Severity: High if the wrong amount is charged at checkout.
+  
+The catalog lists two tax rates: 5% and 18%. Verify that tax is calculated on the discounted case price if the discount is applied before tax, and that the displayed tax rate matches the product's configuration.
+Example for SKU-0469 — Chef's Banana Chips:
+  
+Calculation	Expected amount
+Piece price	₹365.00
+Case quantity	6
+Case price before discount	₹2,190.00
+8% case discount	₹175.20
+Discounted case price	₹2,014.80
+Tax at 18%	₹362.66
+  
+Expected case total including tax	₹2,377.46
+Example for SKU-0004 — Chef's Basmati Rice:
+Calculation	Expected amount
+Discounted case price	₹1,159.20
+Tax at 5%	₹57.96
+  
+Expected case total including tax	₹1,217.16
+  
+Test cases:
+- Verify tax is not omitted at checkout.
+- Verify tax is not applied twice.
+- Verify the correct tax rate is applied to both piece and case purchases.
+- Verify whether the discount is applied before or after tax according to the business rules.
+- Verify rounding to two decimal places.
+- Verify the cart subtotal, tax amount, and final payable amount agree.
+- Verify removing a product recalculates tax correctly.

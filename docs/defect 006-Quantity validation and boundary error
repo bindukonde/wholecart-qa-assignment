@@ -1,0 +1,24 @@
+
+Quantity validation and boundary errors
+Severity: High for incorrect order quantities;
+  Medium for validation-message issues.
+  
+Test the quantity field for both Piece and Case purchase modes.
+Test input	Expected behavior
+Empty quantity	Show required-field validation or use a documented default
+0	Reject
+1	Accept if stock is available
+99	Accept if stock is available
+100	Reject if the maximum is 99
+-1	Reject
+1.5	Reject fractional quantity
+abc	Reject nonnumeric input
+1.0	Confirm integer-format handling against the requirement
+1e2	Reject if scientific notation is unsupported
+@#$	Reject invalid characters
+  
+Very long number	Reject safely without crashing
+Leading/trailing spaces	Trim or reject consistently
+Blank after editing	Prevent unintended addition
+A suitable validation message is: “Quantity must be a whole number from 1 to 99.”
+Check that invalid input never adds an item to the cart and never changes the cart total.

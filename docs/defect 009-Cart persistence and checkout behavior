@@ -1,0 +1,13 @@
+Cart persistence and checkout behavior
+  
+Severity: High if orders are lost or incorrect.
+Verify:
+- Cart contents persist according to the application's documented session behavior.
+- Re-login does not mix one user's cart with another user's cart.
+- Refreshing the page does not duplicate cart items.
+- Back navigation does not create duplicate orders.
+- Double-clicking Add to Cart does not unintentionally add two items.
+- Double-clicking Place Order does not create duplicate orders.
+- A network failure does not leave the displayed cart inconsistent with the server.
+- The order confirmation matches the final checkout summary.
+- Prices and stock are revalidated before order submission.

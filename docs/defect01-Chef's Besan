@@ -1,0 +1,73 @@
+WC-BUG-001— Chef's Besan Cart Line Total Changes Unexpectedly
+  
+**Module:** Shopping Cart / Cart Calculation  
+**Severity:** Medium 
+**Priority:** Medium  
+ 
+**Environment:** WholeCart browser-based test environment  
+**Seller:** FreshFarm Foods  
+**Product:** Chef's Besan  
+**SKU:** SKU-0114  
+**Product Category:** Grains  
+**Unit:** Case of 24  
+**Displayed Case Price:** ₹1,092.96 (excluding tax)
+
+### 1. Description
+
+The line total for Chef's Besan differs between two observed cart states. Initially, the line total is ₹1,092.96, matching the displayed case price. In a later cart state, the line total changes to ₹12,022.56, equivalent to 11 cases at the displayed price.
+
+The cart's net total also changes from ₹25,311.36 to ₹36,240.96. The quantity change may explain the difference, but the available observations do not establish whether the quantity was intentionally updated or whether the cart calculation is incorrect.
+
+### 2. Preconditions
+
+1. Buyer is logged in to WholeCart.
+2. Chef's Besan is available from FreshFarm Foods.
+3. The product listing displays:
+   - Unit: Case of 24
+   - Case price: ₹1,092.96, excluding tax
+   - Available stock: 515 pieces
+4. The cart contains Chef's Basmati Rice, Chef's Besan, and Chef's Banana Chips.
+
+### 3. Steps to Reproduce
+
+1. Log in to WholeCart as a buyer.
+2. Add Chef's Besan to the cart.
+3. Open the cart and record the Besan unit, quantity, unit price, and line total.
+4. Record the overall cart net total.
+5. Perform the same cart actions that led to the later observed state, if known.
+6. Reopen or refresh the cart.
+7. Record the Besan quantity and line total again.
+8. Compare the two states and verify whether the quantity change explains the new line total.
+
+### 4. Expected Result
+
+- The line total should equal the displayed unit price multiplied by the selected quantity.
+- The cart should display the correct quantity and corresponding line total.
+- The overall net total should equal the sum of all product line totals.
+- Cart values should remain consistent after updates, refreshes, and navigation between the cart and checkout.
+
+### 5. Actual Result
+
+**Initial observed cart state:**
+
+- Chef's Besan line total: ₹1,092.96
+- Cart net total: ₹25,311.36
+
+**Later observed cart state:**
+
+- Chef's Besan line total: ₹12,022.56
+- Cart net total: ₹36,240.96
+
+The later Besan line total is exactly 11 times the displayed case price:
+
+₹1,092.96 × 11 = ₹12,022.56
+
+The overall cart net total increases by ₹10,929.60, which equals the difference between the two Besan line totals.
+
+### 6. Business Impact
+
+If the line total changes without a corresponding quantity update, buyers may see incorrect cart values and misunderstand the amount they are purchasing. This could lead to inaccurate order summaries, loss of buyer confidence, and incorrect order amounts.
+
+
+
+Confirm the defect if the line total changes without a corresponding quantity change, does not match the displayed quantity and unit price,

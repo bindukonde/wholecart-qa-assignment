@@ -1,0 +1,11 @@
+Delivery-slot messaging is confusing
+  
+The checkout displays:
+- 08:00–11:00 — “Same-day delivery is only available for afternoon and evening slots.”
+- 11:00–14:00 — the same restriction.
+- 14:00–17:00 — “Same-day orders must be placed before 10:00.”
+- 17:00–20:00 — the same cutoff.
+The morning slot's message conflicts with the stated afternoon/evening-only same-day policy.
+Expected result: Delivery-slot availability and validation messages should clearly communicate which slots are eligible for same-day delivery.
+Test: Select today's date, test each slot before and after the 10:00 cutoff, and verify the available slots and messages.
+This is a potential UI/business-rule defect until the intended delivery policy is confirmed.

@@ -1,0 +1,10 @@
+UI / Layout & Visual Bugs: 
+Inconsistent Header Underline: The active navigation tab is presumably Orders, 
+but there is no active tab highlight/underline in the top navigation bar.   
+  Table Cell Alignment Discrepancies:Total column header is center/left aligned, while financial numbers 
+    should typically be right-aligned for standard tabular readability.   The vertical alignment between the 
+    row text and the empty borders in the Actions column appears uncentered.  
+    Missing Status Badge Styling: The status delivered is plain text. Modern dashboards typically 
+    render order statuses within styled badges/chips (e.g., green pill for delivered) for clear at-a-glance visibility.
+    Large Unused White Space: The table does not span the expected container width properly or
+    has excessive empty vertical/horizontal spacing on standard desktop viewports

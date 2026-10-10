@@ -1,0 +1,22 @@
+ Free delivery pilot is not applied to eligible buyer orders
+
+**Module:** Marketplace Settings / Delivery Charges
+
+**Test Data:**
+- Pilot: OPS-14
+- Buyer: buyer3 (शर्मा भोजनालय)
+- Free delivery expiry: 31 October 2026
+
+**Steps to Reproduce:**
+1. Open Marketplace Settings.
+2. Verify that pilot OPS-14 is active for buyer3.
+3. Place an order as buyer3 that meets the applicable delivery eligibility conditions.
+4. Proceed to checkout before 31 October 2026.
+5. Check the delivery fee and final payable amount.
+
+**Expected Result:** Eligible orders placed during the active pilot period should receive free delivery, and the delivery fee should be ₹0 before tax.
+
+**Actual Result:** Record the delivery fee displayed at checkout. If a delivery fee is charged to an eligible order, the defect is reproducible.
+
+**Severity:** High if eligible orders are incorrectly charged.
+

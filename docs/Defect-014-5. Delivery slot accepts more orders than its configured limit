@@ -1,0 +1,9 @@
+Delivery slot accepts more orders than its configured limit
+High
+Delivery Slots
+
+Steps
+1. Configure “Orders per delivery slot” to a small value, such as 2.
+2. Place orders until the slot reaches its limit.
+3. Attempt one more order for the same slot.
+Expected: The system prevents the slot from exceeding its limit or offers another available slot.
